@@ -11,6 +11,7 @@ function (x, by = NULL, MARGIN = 2, niter = 200, method = "sample-size", q = 0, 
     } else {
         x <- as.matrix(t(x[,order(by)]))
     }
+    x <- ifelse(x>0, 1, 0)
 
     obs <- list()
     for(i in 1:length(levels(factor(by)))) {

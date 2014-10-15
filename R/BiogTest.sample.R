@@ -11,6 +11,7 @@ function (x, by = NULL, MARGIN = 2, niter = 200, method = "sample-size", q = 0, 
     } else {
         x <- as.matrix(t(x[,order(by)]))
     }
+    x <- ifelse(x>0, 1, 0)
 
     obs <- list()
     for(i in 1:length(levels(factor(by)))) {
@@ -32,9 +33,15 @@ function (x, by = NULL, MARGIN = 2, niter = 200, method = "sample-size", q = 0, 
         }
     Z <- sum(A)
 
-    SR <- do.call("rbind", apply(x, 2, chao1))
-    mr <- match(max(SR[,2]), SR[,2])
-    range.SR <- c(SR[mr, 4], SR[mr, 5])
+    SR <- NULL
+    for(i in 1:length(levels(factor(by)))) {
+        SR <- rbind(SR, unlist(specpool(subset(x, by==levels(factor(by))[i]))[2:3]))
+    }
+    mr <- match(max(SR[,1]), SR[,1])
+    range.SR <- c(SR[mr, 1]-2*SR[mr,2], SR[mr, 1]+2*SR[mr,2])
+    obs.SR <- by(x, factor(as.character(by)), function(z) ncol(z[,colSums(z)>0]))
+    range.SR[1] <- ifelse(range.SR[1] < max(obs.SR), max(obs.SR), range.SR[1]) 
+
     Zsim <- NULL
     for (it in 1:niter) {
         if (trace == TRUE) 
@@ -59,15 +66,15 @@ function (x, by = NULL, MARGIN = 2, niter = 200, method = "sample-size", q = 0, 
             com <- diff(segments)
         }
         com <- ceiling(com/min(com[com>0]))
-        prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.01, 25))
+        prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.1, 25))
         index <- is.na(prob)
-        df <- sample(1:length(com[!index]), sum(x[1,]), replace=TRUE, prob=com[!index])
+        df <- sample(1:length(com[!index]), sum(x[1,]), replace=FALSE, prob=prob[!index])
         df <- data.frame(table(df))
         colnames(df) <- c("species", "sample1")
         for(j in 2:dim(x)[1]) {
-            prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.01, 25))
+            prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.1, 25))
             index <- is.na(prob)
-            stemp <- sample(1:length(com[!index]), sum(x[j,]), replace=TRUE, prob=com[!index])
+            stemp <- sample(1:length(com[!index]), sum(x[j,]), replace=FALSE, prob=prob[!index])
             stemp <- data.frame(table(stemp))
             colnames(stemp) <- c("species", paste("sample", j, sep=""))
             df <- merge(df, stemp, by="species", all=TRUE)

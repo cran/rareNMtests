@@ -32,6 +32,7 @@ function (x, MARGIN = 2, niter = 200, method = "sample-size", q = 0, trace = TRU
     SR <- do.call("rbind", apply(x, 2, chao1))
     mr <- match(max(SR[,2]), SR[,2])
     range.SR <- c(SR[mr, 4], SR[mr, 5])
+
     Zsim <- NULL
     for (i in 1:niter) {
         if (trace == TRUE) 
@@ -55,15 +56,15 @@ function (x, MARGIN = 2, niter = 200, method = "sample-size", q = 0, trace = TRU
             com <- diff(segments)
         }
         com <- ceiling(com/min(com[com>0]))
-        prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.01, 25))
+        prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.1, 25))
         index <- is.na(prob)
-        df <- sample(1:length(com[!index]), sum(x[,1]), replace=TRUE, prob=com[!index])
+        df <- sample(1:length(com[!index]), sum(x[,1]), replace=TRUE, prob=prob[!index])
         df <- data.frame(table(df))
         colnames(df) <- c("species", "sample1")
         for(j in 2:dim(x)[2]) {
-            prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.01, 25))
+            prob <- rnbinom(n = length(com), mu=com, size=runif(length(com), 0.1, 25))
             index <- is.na(prob)
-            stemp <- sample(1:length(com[!index]), sum(x[,j]), replace=TRUE, prob=com[!index])
+            stemp <- sample(1:length(com[!index]), sum(x[,j]), replace=TRUE, prob=prob[!index])
             stemp <- data.frame(table(stemp))
             colnames(stemp) <- c("species", paste("sample", j, sep=""))
             df <- merge(df, stemp, by="species", all=TRUE)

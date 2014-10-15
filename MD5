@@ -1,9 +1,9 @@
-d51b9ad474789d0d8fe4b7f1952645c5 *DESCRIPTION
+6ba07f88808baa36b8c812ebe6536dfc *DESCRIPTION
 6d1e71f2becc8206abb8b65ab1ab9b02 *NAMESPACE
-c5dd3ca3f0ac4b22412b89a45e359869 *R/BiogTest.individual.R
-3a641fda48ce6490c9df844ff3de7c90 *R/BiogTest.sample.R
+da86fdbd1d50767433db6f471d9a33d7 *R/BiogTest.individual.R
+6a656c79408246306e95792d8b9b4f4d *R/BiogTest.sample.R
 1afb3a65676cdfe57d79928c78ec0fea *R/EcoTest.individual.R
-08b917dc0c22161cef7dc17f2fe83636 *R/EcoTest.sample.R
+3eaa2fc772137f143e0f2c9cd08c7064 *R/EcoTest.sample.R
 28187d8ffb0f02c5d758a7816b731f79 *R/area.xypolygon.R
 250e6706cd2bc10f1483e0bb53bf6591 *R/chao1.R
 4d18b0dae7ceb06399ff8fcc82a521e2 *R/plot.BiogTest.R
