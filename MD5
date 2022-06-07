@@ -1,5 +1,5 @@
-6ba07f88808baa36b8c812ebe6536dfc *DESCRIPTION
-6d1e71f2becc8206abb8b65ab1ab9b02 *NAMESPACE
+ab2f231aadc01fe1f93c5a315e838b03 *DESCRIPTION
+7f09e3eb69ce25911d6ba063b70e2138 *NAMESPACE
 da86fdbd1d50767433db6f471d9a33d7 *R/BiogTest.individual.R
 6a656c79408246306e95792d8b9b4f4d *R/BiogTest.sample.R
 1afb3a65676cdfe57d79928c78ec0fea *R/EcoTest.individual.R
@@ -11,9 +11,9 @@ da86fdbd1d50767433db6f471d9a33d7 *R/BiogTest.individual.R
 407076741b587e01ba20b35ea52491a4 *R/rarefaction.individual.R
 0a01958bddb924d91ab64a15c9f0b65a *R/rarefaction.sample.R
 e46a825cb0860dc509ee69d2cbdf5eb9 *data/Chiapas.rda
-b0dd17dbb31c28e6f645b56636bc045c *man/BiogTest.individual.Rd
-70cadccdeaeb92969e86883e1205ab3f *man/Chiapas.Rd
-3418dd7d4940ea573128c256f0bfa830 *man/EcoTest.individual.Rd
+5301f62640dfa31e5f4117cc2323a3d3 *man/BiogTest.individual.Rd
+db3f893ff37077f8b5d1d24505c58b54 *man/Chiapas.Rd
+a7fc0801ee70e94c064fe8f52c999c16 *man/EcoTest.individual.Rd
 ecbf69060d1c67df92fa9068f2bc7f53 *man/chao1.Rd
 4a3549f2f2aa9f7b2e87711fb972d5c4 *man/rareNMtests-internal.Rd
 6dab2113c427d412f33e672917557746 *man/rarefaction.individual.Rd

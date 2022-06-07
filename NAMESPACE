@@ -3,6 +3,9 @@ export("BiogTest.individual", "BiogTest.sample", "chao1", "EcoTest.individual", 
 
 # Import all packages listed as Imports or Depends
 import(vegan)
+importFrom("stats", "aggregate", "quantile", "rlnorm", "rnbinom",
+     "runif", "xtabs")
+     importFrom("utils", "combn")
 
 ## Registration of S3 methods
 import(graphics)

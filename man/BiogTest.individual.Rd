@@ -59,7 +59,7 @@ Analytic estimators for individual-based, sample-based, and coverage-based raref
 }
 
 \references{
-Cayuela, L. & Gotelli, N.J. Ecological and biogeographical null hypotheses for comparing rarefaction curves. In prep.
+Cayuela, L., Gotelli, N.J. & Colwell, R.K. (2015). Ecological and biogeographical null hypotheses for comparing rarefaction curves. \emph{Ecological Monographs} 85: 437-455.
 
 Chao, A. (1984). Nonparametric-estimation of the number of classes in a population. \emph{Scandinavian Journal of Statistics} 11: 265-270.
 

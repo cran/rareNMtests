@@ -52,7 +52,7 @@ Analytic estimators for individual-based, sample-based, and coverage-based raref
 }
 
 \references{
-Cayuela, L. & Gotelli, N.J. Ecological and biogeographical null hypotheses for comparing rarefaction curves. In prep.
+Cayuela, L., Gotelli, N.J. & Colwell, R.K. (2015). Ecological and biogeographical null hypotheses for comparing rarefaction curves. \emph{Ecological Monographs} 85: 437-455.
 
 Chao, A., Gotelli, N.J., Hsieh, T.C., Sander, E.L., Ma, K.H., Colwell, R.K. & Ellison, A.M. (2014). Rarefaction and extrapolation with Hill numbers: a framework for sampling and estimation in species diversity studies. emph{Ecological Monographs} 84: 45-67.
 }
